@@ -1,0 +1,16 @@
+.bistro-boss{
+
+
+    background-image: url("../../../assets/home/featured.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
+    
+}
