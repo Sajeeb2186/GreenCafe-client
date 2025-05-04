@@ -2,6 +2,7 @@ import React from 'react'
 import SectionTitle from '../../../components/SectionTitle'
 
 import chefRecImg from "../../../assets/home/featured.jpg";
+import FoodCard from '../../../components/FoodCard/FoodCard';
 
 
 export default function ChefRecommends() {
@@ -18,6 +19,7 @@ export default function ChefRecommends() {
 
 
        <div className='grid md:grid-cols-3 gap-10'>
+
        <div className="card bg-base-100 w-96 shadow-sm">
   <figure className="px-10 pt-10">
     <img
