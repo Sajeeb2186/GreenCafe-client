@@ -1,5 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { loadCaptchaEnginge, LoadCanvasTemplate,  validateCaptcha } from 'react-simple-captcha';
+import { AuthContext } from '../../providers/AuthProvider';
+import { Link } from 'react-router-dom';
 
 
 export default function Login() {
@@ -8,7 +10,8 @@ export default function Login() {
     const captchaRef=useRef(null);
 
     const [disabled, setDisabled] = useState(true);
- 
+     
+    const {signIn}=useContext(AuthContext);
 
     useEffect(()=>{
 
@@ -26,6 +29,16 @@ export default function Login() {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+        signIn(email, password)
+            .then((result) => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                form.reset();
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+
     }
 
 
@@ -88,6 +101,11 @@ export default function Login() {
             <input disabled={disabled} className="btn btn-primary"   type="submit" value="Login" />
           </div>
         </form>
+
+        <p><small>New here?<Link to="/signup">Please register</Link></small></p>
+
+
+
       </div>
     </div>
   </div>
