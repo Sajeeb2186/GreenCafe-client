@@ -1,7 +1,7 @@
 import { useContext, useEffect,  useState } from 'react';
 import { loadCaptchaEnginge, LoadCanvasTemplate,  validateCaptcha } from 'react-simple-captcha';
 import { AuthContext } from '../../providers/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 
@@ -13,6 +13,11 @@ export default function Login() {
     const [disabled, setDisabled] = useState(true);
      
     const {signIn}=useContext(AuthContext);
+
+    const navigate=useNavigate();
+    const location=useLocation();
+
+    const from=location.state?.from?.pathname || '/';
 
     useEffect(()=>{
 
@@ -45,6 +50,8 @@ export default function Login() {
                 });
 
 
+
+navigate(from, { replace: true });
 
 
             })
