@@ -117,8 +117,8 @@ navigate(from, { replace: true });
            
           </div>
           <div className="form-control mt-6">
-            
-            <input disabled={disabled} className="btn btn-primary"   type="submit" value="Login" />
+             {/* todo: apply disabled  instead of false*/}
+            <input disabled={false} className="btn btn-primary"   type="submit" value="Login" />
           </div>
         </form>
 
