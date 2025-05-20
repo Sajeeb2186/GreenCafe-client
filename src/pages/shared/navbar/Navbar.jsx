@@ -37,7 +37,7 @@ export default function Navbar() {
         <Link to="/secret">Secret</Link>
       </li>
       <li>
-        <Link to="/">
+        <Link to="/dashboard/cart">
           <button className="btn bg-transparent border-0">
             <FaShoppingCart className="text-2xl text-white " />
             <div className="badge badge-sm badge-secondary">+{cart.length}</div>
